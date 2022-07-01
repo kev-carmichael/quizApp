@@ -29,7 +29,7 @@ saveHighScore = (e) => {
 
     localStorage.setItem("highScores", JSON.stringify(highScores));
     //once set high score, return to home screen
-    window.location.assign("/");
+    window.location.assign("index.html");
 
     console.log(highScores);
 
