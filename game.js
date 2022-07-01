@@ -13,19 +13,40 @@ let availableQuestions = [];
 
 let questions = [];
 
-fetch("questions.json").then( res => {
-    return res.json();
-}).then(loadedQuestions => {
-    console.log(loadedQuestions);
-    questions = loadedQuestions;
-    startGame();
-}).catch(err =>{
-    console.error(err);
-});
+fetch(
+    'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple'
+)
+    .then((res) => {
+        return res.json();
+    })
+    .then((loadedQuestions) => {
+        questions = loadedQuestions.results.map((loadedQuestion) => {
+            const formattedQuestion = {
+                question: loadedQuestion.question,
+            };
 
+            const answerChoices = [...loadedQuestion.incorrect_answers];
+            formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+            answerChoices.splice(
+                formattedQuestion.answer - 1,
+                0,
+                loadedQuestion.correct_answer
+            );
+
+            answerChoices.forEach((choice, index) => {
+                formattedQuestion['choice' + (index + 1)] = choice;
+            });
+
+            return formattedQuestion;
+        });
+        startGame();
+    })
+    .catch((err) => {
+        console.error(err);
+    });
 
 const CORRECT_BONUS = 1;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 10;
 
 startGame = () => {
     score = 0;
