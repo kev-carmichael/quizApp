@@ -12,8 +12,26 @@ let availableQuestions = [];
 
 
 let questions = [];
-let amount = 50;
+let amount = 0;
 difficulty = 'medium';
+
+function get () {
+    // (A) GET FROM SESSION
+    var first = sessionStorage.getItem("first");
+  
+    // (B) IT WORKS!
+    // MANUALLY OPENING 1B-SESSION.HTML WILL NOT WORK THOUGH
+    // SESSION DATA WILL PERISH ONCE TAB/WINDOW IS CLOSED
+    console.log(first);  // Foo Bar
+  
+    // (EXTRA) CLEAR SESSION STORAGE
+    // sessionStorage.removeItem("KEY");
+    // sessionStorage.clear();
+    amount = first;
+  }
+  
+
+get();
 
 fetch(
     'https://opentdb.com/api.php?amount='+amount+'&category=9&difficulty='+difficulty+'&type=multiple'
@@ -49,6 +67,9 @@ fetch(
 
 const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = amount;
+
+
+
 
 startGame = () => {
     score = 0;
