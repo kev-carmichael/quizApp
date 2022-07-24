@@ -16,18 +16,17 @@ let amount = 0;
 difficulty = 'medium';
 
 function get () {
-    // (A) GET FROM SESSION
     var first = sessionStorage.getItem("first");
+    var second = sessionStorage.getItem("second");
   
-    // (B) IT WORKS!
-    // MANUALLY OPENING 1B-SESSION.HTML WILL NOT WORK THOUGH
-    // SESSION DATA WILL PERISH ONCE TAB/WINDOW IS CLOSED
-    console.log(first);  // Foo Bar
+    console.log(first);  
+    console.log(second);
   
     // (EXTRA) CLEAR SESSION STORAGE
     // sessionStorage.removeItem("KEY");
     // sessionStorage.clear();
     amount = first;
+    difficulty = second;
   }
   
 

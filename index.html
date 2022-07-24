@@ -16,6 +16,13 @@
                 <label for="question_amount">Number of Questions</label>
                 <input type="number" name="question_amount" id="question_amount" class="form-control" min="1" max="50" value="10">
               <br>
+              <label for="question_difficulty">Select Difficulty</label>
+              <select name="question_difficulty" class="form-control" id="question_difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            <br>
             </form>
 
             <a class="btn" onclick="store()" href="game.html">Start</a>

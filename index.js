@@ -1,14 +1,11 @@
 function store () {
-    // (A) VARIABLES TO PASS
     var first = document.getElementById("question_amount").value;
+    var second = document.getElementById("question_difficulty").value;
    
-    // (B) SAVE TO SESSION STORAGE
-    // (B1) FLAT STRING OR NUMBER
-    // SESSIONSTORAGE.SETITEM("KEY", "VALUE");
     sessionStorage.setItem("first", first);
+    sessionStorage.setItem("second", second);
    
    
-    // (C) REDIRECT
+    // double bubble as in href for btn?
     location.href = "game.html";
-    // window.open("1b-session.html");
   }
