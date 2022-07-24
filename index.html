@@ -11,9 +11,8 @@
     <div class = "container">
         <div id = "home" class = "flex-center flex-column">
             <h1>Kev's Quiz App</h1>
-            <p>Select number of questions</p>
             <form action method="post" class="form-options">
-                <label for="question_amount">Number of Questions</label>
+                <label for="question_amount">Select Number of Questions</label>
                 <input type="number" name="question_amount" id="question_amount" class="form-control" min="1" max="50" value="10">
               <br>
               <label for="question_difficulty">Select Difficulty</label>
@@ -25,8 +24,7 @@
             <br>
             </form>
 
-            <a class="btn" onclick="store()" href="game.html">Start</a>
-            <a class="btn" href="highscores.html">High Scores</a>
+            <a class="btn_start" onclick="store()" href="game.html">Start Quiz</a>
         </div>
     </div>
     <script src="index.js"></script>

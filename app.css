@@ -101,6 +101,21 @@ h3 {
     transform: none;
 }
 
+.btn_start {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid #283593;
+    margin-top: 1.6rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: #283593;
+    background-color: #ffffff;
+}
+
+
+
 form {
     width: 100%;
     display: flex;
@@ -118,3 +133,30 @@ input {
 input::placeholder {
     color: rgba(137, 135, 135, 0.747);
 }
+
+/* ensures the increment/decrement arrows always display */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+  text-align: center;
+}
+
+select {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid #283593;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: #283593;
+    background-color: #ffffff;
+  }
+  
+  label {
+    font-size: 1.6rem;
+    width: 20rem;
+    text-align: center;
+    text-decoration: none;
+    color: #283593;
+  }
