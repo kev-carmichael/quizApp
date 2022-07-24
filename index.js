@@ -1,6 +1,6 @@
-function store (a) {
+function store () {
     // (A) VARIABLES TO PASS
-    var first = a;
+    var first = document.getElementById("question_amount").value;
    
     // (B) SAVE TO SESSION STORAGE
     // (B1) FLAT STRING OR NUMBER
