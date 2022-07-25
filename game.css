@@ -63,3 +63,23 @@
     background-color: #283593;
     width: 0%;
 }
+.timer-div {
+    background-color: #e1f5fe;
+    width: 7.5em;
+    border-radius: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7em 1.8em;
+  }
+  .time-left {
+    text-align: center;
+    font-size: 1.6rem;
+}
+#timer {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 1rem;
+}
+
+
