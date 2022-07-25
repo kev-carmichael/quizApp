@@ -10,6 +10,26 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
+let timeLeft = document.querySelector(".time-left");
+let count = 11;
+let countdown;
+
+//Timer
+const timerDisplay = () => {
+    countdown = setInterval(() => {
+      count--;
+      timeLeft.innerHTML = `${count}s`;
+      if (count == 0) {
+        clearInterval(countdown);
+        getNewQuestion();
+      }
+    }, 1000);
+  };
+
+    //clear interval(stop timer)
+    clearInterval(countdown);
+
+
 
 let questions = [];
 let amount = 0;
@@ -74,6 +94,11 @@ startGame = () => {
     score = 0;
     questionCounter = 0;
     availableQuestions = [...questions];
+
+    clearInterval(countdown);
+    count = 11;
+    timerDisplay();
+
     getNewQuestion();
 };
 
@@ -85,6 +110,11 @@ getNewQuestion = () => {
     }
 
     questionCounter++;
+
+    clearInterval(countdown);
+    count = 11;
+    timerDisplay();
+
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
     scoreText.innerText = score;
 
