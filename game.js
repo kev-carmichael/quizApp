@@ -148,9 +148,30 @@ getNewQuestion = () => {
         currentQuestion.question = currentQuestion.question.replaceAll("&hellip;", "...");}
         
     question.innerText = currentQuestion.question;
+
+
     choices.forEach(choice => {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestion['choice' + number];
+
+        if(choice.innerText.includes("&quot;")){
+            choice.innerText = choice.innerText.replaceAll("&quot;", "\"");}
+
+        if(choice.innerText.includes("&#039;")){
+            choice.innerText = currentQuestion.question.replaceAll("&#039;", "\'");}  
+
+        if(choice.innerText.includes("&Idquo;")){
+            choice.innerText = currentQuestion.question.replaceAll("&Idquo;", "\"");}
+
+        if(choice.innerText.includes("&rsquo;")){
+            choice.innerText = currentQuestion.question.replaceAll("&rsquo;", "\'");}  
+
+        if(choice.innerText.includes("&rdquo;")){
+            choice.innerText = currentQuestion.question.replaceAll("&rdquo;", "\"");}
+
+        if(choice.innerText.includes("&hellip;")){
+            choice.innerText = currentQuestion.question.replaceAll("&hellip;", "...");}
+
     })
     availableQuestions.splice(questionIndex, 1);
     acceptingAnswers = true;
