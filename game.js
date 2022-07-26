@@ -128,6 +128,25 @@ getNewQuestion = () => {
 
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
+
+    if(currentQuestion.question.includes("&quot;")){
+        currentQuestion.question = currentQuestion.question.replaceAll("&quot;", "\"");}
+
+    if(currentQuestion.question.includes("&#039;")){
+        currentQuestion.question = currentQuestion.question.replaceAll("&#039;", "\'");}  
+
+    if(currentQuestion.question.includes("&Idquo;")){
+        currentQuestion.question = currentQuestion.question.replaceAll("&Idquo;", "\"");}
+
+    if(currentQuestion.question.includes("&rsquo;")){
+        currentQuestion.question = currentQuestion.question.replaceAll("&rsquo;", "\'");}  
+
+    if(currentQuestion.question.includes("&rdquo;")){
+        currentQuestion.question = currentQuestion.question.replaceAll("&rdquo;", "\"");}
+
+    if(currentQuestion.question.includes("&hellip;")){
+        currentQuestion.question = currentQuestion.question.replaceAll("&hellip;", "...");}
+        
     question.innerText = currentQuestion.question;
     choices.forEach(choice => {
         const number = choice.dataset['number'];
