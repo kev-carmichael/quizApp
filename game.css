@@ -81,3 +81,19 @@
     height: 4rem;
     margin-top: 1rem;
 }
+#spinner{
+    border: 1.6rem solid #ffffff;
+    border-radius: 50%;
+    border-top: 1.6em solid #283593;
+    width: 8rem;
+    height: 8rem;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    } 
+    100% {
+        transform: rotate(360deg);
+    }
+}

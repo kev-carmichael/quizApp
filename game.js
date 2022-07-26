@@ -1,8 +1,11 @@
+
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const scoreText = document.getElementById("score");
 const progressText = document.getElementById("progressText");
 const progressBarFull = document.getElementById("progressBarFull");
+const spinner = document.getElementById("spinner");
+const game = document.getElementById("game");
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -100,6 +103,8 @@ startGame = () => {
     timerDisplay();
 
     getNewQuestion();
+    game.classList.remove("hidden");
+    spinner.classList.add("hidden");
 };
 
 getNewQuestion = () => {
@@ -130,7 +135,6 @@ getNewQuestion = () => {
     availableQuestions.splice(questionIndex, 1);
     acceptingAnswers = true;
 };
-
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if (!acceptingAnswers) return;
