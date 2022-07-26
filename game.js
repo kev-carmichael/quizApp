@@ -36,27 +36,28 @@ const timerDisplay = () => {
 
 let questions = [];
 let amount = 0;
-difficulty = 'medium';
+let difficulty = 'medium';
+let category = '9';
+
 
 function get () {
     var first = sessionStorage.getItem("first");
     var second = sessionStorage.getItem("second");
-  
-    console.log(first);  
-    console.log(second);
-  
+    var third = sessionStorage.getItem("third");
+   
     // (EXTRA) CLEAR SESSION STORAGE
     // sessionStorage.removeItem("KEY");
     // sessionStorage.clear();
     amount = first;
     difficulty = second;
+    category = third;
   }
   
 
 get();
 
 fetch(
-    'https://opentdb.com/api.php?amount='+amount+'&category=9&difficulty='+difficulty+'&type=multiple'
+    'https://opentdb.com/api.php?amount='+amount+'&category='+category+'&difficulty='+difficulty+'&type=multiple'
 )
     .then((res) => {
         return res.json();

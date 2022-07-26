@@ -11,6 +11,18 @@
     <div class = "container">
         <div id = "home" class = "flex-center flex-column">
             <h1>Kev's Quiz App</h1>
+
+            <label for="category">Select Category</label>
+            <select name="category" class="form-control" id="category">
+              <option value="9">General Knowledge</option>
+              <option value="17">Science and Nature</option>
+              <option value="21">Sport</option>
+              <option value="22">Geography</option>
+              <option value="23">History</option>
+              <option value="11">Film</option>          
+            </select>
+          <br>
+
             <form action method="post" class="form-options">
                 <label for="question_amount">Select Number of Questions</label>
                 <input type="number" name="question_amount" id="question_amount" class="form-control" min="1" max="50" value="10">

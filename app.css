@@ -103,6 +103,7 @@ h3 {
 
 .btn_start {
     font-size: 1.8rem;
+    font-weight: bolder;
     padding: 1rem 0;
     width: 20rem;
     text-align: center;
@@ -128,6 +129,7 @@ input {
     width: 20rem;
     padding: 1rem;
     font-size: 1.8rem;
+    text-align: center;
 }
 
 input::placeholder {
