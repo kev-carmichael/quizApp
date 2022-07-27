@@ -152,6 +152,9 @@ getNewQuestion = () => {
     
     if(currentQuestion.question.includes("&shy;")){
         currentQuestion.question = currentQuestion.question.replaceAll("&shy;", "-");}
+
+    if(currentQuestion.question.includes("&oacute;")){
+        currentQuestion.question = currentQuestion.question.replaceAll("&oacute;", "Ó");}
     
     question.innerText = currentQuestion.question;
 
@@ -183,6 +186,9 @@ getNewQuestion = () => {
 
         if(choice.innerText.includes("&shy;")){
             choice.innerText = choice.innerText.replaceAll("&shy;", "-");}
+
+        if(choice.innerText.includes("&oacute;")){
+            choice.innerText = choice.innerText.replaceAll("&shy;", "Ó");}
     
 
     })
