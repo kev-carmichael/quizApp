@@ -146,7 +146,10 @@ getNewQuestion = () => {
 
     if(currentQuestion.question.includes("&hellip;")){
         currentQuestion.question = currentQuestion.question.replaceAll("&hellip;", "...");}
-        
+
+    if(currentQuestion.question.includes("&amp;")){
+        currentQuestion.question = currentQuestion.question.replaceAll("&amp;", "&");}
+    
     question.innerText = currentQuestion.question;
 
 
@@ -171,6 +174,10 @@ getNewQuestion = () => {
 
         if(choice.innerText.includes("&hellip;")){
             choice.innerText = currentQuestion.question.replaceAll("&hellip;", "...");}
+
+        if(choice.innerText.includes("&amp;")){
+            choice.innerText = choice.innerText.replaceAll("&amp;", "&");}
+    
 
     })
     availableQuestions.splice(questionIndex, 1);
